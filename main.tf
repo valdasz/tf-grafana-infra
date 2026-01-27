@@ -6,7 +6,7 @@ locals {
   public_service_host_header   = "${local.service_public_dns_name}.*"
 
   cluster_name           = length(var.cluster_name) > 0 ? var.cluster_name : "${var.deployment}-ecs-observability"
-  capacity_provider_name = length(var.capacity_provider_name) > 0 ? var.capacity_provider_name : "${var.cluster_name}-capacity-provider"
+  capacity_provider_name = length(var.capacity_provider_name) > 0 ? var.capacity_provider_name : "${local.cluster_name}-capacity-provider"
   container_name         = "${local.service_name}-container"
   container_port         = 3000
   health_check_path      = "/api/health"
