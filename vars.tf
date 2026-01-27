@@ -43,6 +43,11 @@ variable "service_public_port" {
   default = 3000
 }
 
+variable "dns_name" {
+  type    = string
+  default = "laellail.com"
+}
+
 variable "public_domain_name" {
   type    = string
   default = ""
@@ -108,6 +113,11 @@ variable "admin_password" {
 variable "logs_retention" {
   type    = number
   default = 1
+}
+
+variable "influx_url" {
+  type    = string
+  default = "http://victoria-metrics.internal.laellail.io:8428"
 }
 
 variable "enable_execute_command" {

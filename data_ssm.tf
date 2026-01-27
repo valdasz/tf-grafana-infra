@@ -31,3 +31,10 @@ data "aws_ssm_parameter" "alb_public_security_group_id" {
   name = "/${var.deployment}/shared/alb/public/security_group_id"
 }
 
+data "aws_ssm_parameter" "alb_public_dns_name" {
+  name = "/${var.deployment}/shared/alb/public/dns_name"
+}
+
+data "aws_ssm_parameter" "alb_public_zone_id" {
+  name = "/${var.deployment}/shared/alb/public/zone_id"
+}
