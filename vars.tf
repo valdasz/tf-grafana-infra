@@ -117,7 +117,7 @@ variable "logs_retention" {
 
 variable "influx_url" {
   type    = string
-  default = "http://victoria-metrics.internal.laellail.io:8428"
+  default = "https://victoria-metrics.internal.laellail.io"
 }
 
 variable "enable_execute_command" {
