@@ -55,7 +55,7 @@ variable "public_domain_name" {
 
 variable "public_alb_listener_rules_starting_number" {
   type    = number
-  default = 100
+  default = 1300
 }
 
 
