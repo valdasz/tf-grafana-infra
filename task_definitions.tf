@@ -1,11 +1,17 @@
 
 resource "aws_ecs_task_definition" "task" {
-  family             = "${local.service_name_with_deployment}-task-definition"
-  task_role_arn      = aws_iam_role.service_task_role.arn
-  execution_role_arn = aws_iam_role.service_task_exec_role.arn
-  network_mode       = "awsvpc"
-  cpu                = var.cpu
-  memory             = var.memory
+  family                   = "${local.service_name_with_deployment}-task-definition"
+  task_role_arn            = aws_iam_role.service_task_role.arn
+  execution_role_arn       = aws_iam_role.service_task_exec_role.arn
+  network_mode             = "awsvpc"
+  requires_compatibilities = ["EC2", "FARGATE"]
+  cpu                      = var.cpu
+  memory                   = var.memory
+
+  runtime_platform {
+    cpu_architecture        = "ARM64"
+    operating_system_family = "LINUX"
+  }
 
   container_definitions = jsonencode([
     {

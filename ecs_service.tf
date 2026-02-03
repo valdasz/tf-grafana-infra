@@ -22,7 +22,6 @@ resource "aws_ecs_service" "service" {
 
   capacity_provider_strategy {
     capacity_provider = local.capacity_provider_name
-    base              = 1
     weight            = 100
   }
 
